@@ -13,9 +13,9 @@ class Solution {
             nums[j]=0;
             j++;
         }
-        System.out.print("[");
+
         for( int x=0;x<nums.length;x++){
-            System.out.print(nums[x]+",");
-        }System.out.print("]");
+            System.out.print(nums[x]+" ");
+        }
     }
 }
