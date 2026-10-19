@@ -1,17 +1,17 @@
 class Solution {
     public List<Integer> targetIndices(int[] nums, int target) {
-        int countLessThan = 0;
-        int countEqual = 0;        
+        int countL = 0;
+        int countE = 0;        
         for (int num : nums) {
             if (num < target) {
-                countLessThan++;
+                countL++;
             } else if (num == target) {
-                countEqual++;
+                countE++;
             }
         }       
         List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < countEqual; i++) {
-            result.add(countLessThan + i);
+        for (int i = 0; i < countE; i++) {
+            result.add(countL + i);
         }        
         return result;
     }
