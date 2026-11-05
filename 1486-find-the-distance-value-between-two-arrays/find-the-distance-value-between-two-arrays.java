@@ -1,27 +1,15 @@
 class Solution {
     public int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
-        Arrays.sort(arr2);
-        int distanceCount = 0; 
-        for (int x : arr1) {
-            if (!hasElementInRange(arr2, x - d, x + d)) {
-                distanceCount++;
-            }
-        }   
-        return distanceCount;
-    }
-    
-    private boolean hasElementInRange(int[] arr2, int low, int high) {
-        int left = 0, right = arr2.length - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (arr2[mid] >= low && arr2[mid] <= high) {
-                return true;
-            } else if (arr2[mid] < low) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
+         int c = 0;
+        for(int n : arr1){
+            if(isValid(n, arr2, d)) c++;
         }
-        return false;
+        return c;
+    }
+    boolean isValid(int n, int[] arr, int d){
+        for(int e : arr){
+            if(Math.abs(e - n) <= d) return false;
+        }
+        return true;
     }
 }
