@@ -12,9 +12,6 @@ class Solution {
             remove--;
             aliceTurn = !aliceTurn;
         }
-
-        // The player whose turn it is when no valid move remains loses,
-        // so the opposite player wins.
         return aliceTurn;
     }
 }
